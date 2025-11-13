@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper]{report} % 'report' est standard pour les rapports techniques
+
+% --- 1. CONFIGURATION ---
+% Importe tous les packages, commandes et la mise en page
+\input{00_Setup/preamble.tex}
+\input{00_Setup/commands.tex}
+\input{00_Setup/layout.tex}
+
+% --- 2. DÉBUT DU DOCUMENT ---
+\begin{document}
+
+% --- 3. PAGES PRÉLIMINAIRES ---
+\frontmatter % Style pour les pages avant le contenu principal (num. romaines, etc.)
+\pagestyle{empty} % Pas de header/footer sur ces premières pages
+
+\input{01_FrontMatter/titlepage.tex}
+\input{01_FrontMatter/adminpage.tex}
+
+% --- 4. TABLES DES MATIÈRES ---
+\newpage
+\pagestyle{plain} % Style simple (juste num. de page) pour les tables
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+% --- 5. CORPS DU RAPPORT ---
+\mainmatter % Commence la numérotation arabe (1, 2, 3...)
+\pagestyle{fancy} % Active votre header/footer personnalisé
+
+\input{02_Chapters/01_introduction.tex}
+\input{02_Chapters/02_methodologie.tex}
+% ... ajoutez vos autres chapitres ici
+
+% --- 6. ANNEXES (Optionnel) ---
+\appendix % Passe en mode "Annexe A", "Annexe B"...
+\input{03_Appendices/annexe_A.tex}
+
+% --- 7. BIBLIOGRAPHIE (Optionnel) ---
+% \printbibliography
+
+\end{document}

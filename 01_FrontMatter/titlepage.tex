@@ -1,0 +1,44 @@
+\begin{titlepage}
+    \centering
+    \vspace*{1cm} % Espace en haut
+
+    % --- Logos ---
+    % On réutilise la même logique que le header pour la cohérence
+    \makebox[\textwidth][c]{
+        \raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/Logo_Université_Gustave_Eiffel.png}}
+        \hfill
+        \raisebox{-0.5\height}{\includegraphics[height=1.5cm]{logos/Logo_ENTPE_long.jpg}}
+    }
+    
+    \vspace*{2cm} % Espace
+    
+    \makebox[\textwidth][c]{
+        \hfill
+        \raisebox{-0.5\height}{\includegraphics[height=2cm]{logos/Logo_LICIT-ECO7_horizontal.png}}
+        \hfill
+    }
+
+    \vspace*{3cm} % Espace
+
+    % --- Titres ---
+    {\Huge \bfseries \reportTitle \par}
+    \vspace{1cm}
+    {\Large \reportSubtitle \par}
+    
+    \vfill % Pousse le contenu suivant vers le bas
+    
+    % --- Auteur et Version ---
+    {\Large \reportAuthor \par}
+    {\large \reportAuthorTeam \par}
+    
+    \vspace{1cm}
+    {\large Version \reportVersion \par}
+    
+    \vspace{2cm}
+    
+    % --- Date ---
+    {\large \reportDate \par}
+    
+    \vspace{1cm} % Espace en bas
+
+\end{titlepage}

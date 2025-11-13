@@ -1,0 +1,31 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+Ceci est le premier chapitre de votre rapport. Vous pouvez utiliser du faux texte pour voir le rendu :
+
+\lipsum[1-2] % Génère 2 paragraphes de faux texte
+
+Vous pouvez référencer une figure (comme la \cref{fig:exemple}) ou une table (voir \cref{tab:exemple}).
+
+\begin{figure}[h!] % [h!] = Tente de placer la figure "ici"
+    \centering
+    \includegraphics[width=0.6\textwidth]{logos/Logo_LICIT-ECO7_vertical.png}
+    \caption{Ceci est un exemple de figure.}
+    \label{fig:exemple}
+\end{figure}
+
+\begin{table}[h!]
+    \centering
+    \caption{Ceci est un exemple de tableau.}
+    \label{tab:exemple}
+    \begin{tabular}{lcc}
+        \toprule
+        Paramètre & Valeur & Unité \\
+        \midrule
+        Vitesse   & 100    & m/s   \\
+        Pression  & 50     & Pa    \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\lipsum[3]

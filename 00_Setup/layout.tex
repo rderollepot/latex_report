@@ -1,0 +1,69 @@
+% --- Configuration des marges ---
+\geometry{
+    a4paper,
+    top=3.5cm,      % Marge en haut (laisse place au header)
+    bottom=3cm,     % Marge en bas (laisse place au footer)
+    left=2.5cm,
+    right=2.5cm,
+    headheight=2cm  % Espace alloué pour le header (IMPORTANT)
+}
+
+% --- Configuration du Header et Footer ---
+\pagestyle{fancy} % Active le style personnalisé
+\fancyhf{} % Efface tous les champs header/footer par défaut
+
+% --- Configuration du Header (Haut de page) ---
+% \fancyhead[C] = Centre
+% \makebox[\textwidth][c]{...} force le contenu à être centré sur la largeur de la page
+% \hfill distribue l'espace équitablement entre les éléments
+\fancyhead[C]{
+    \makebox[\textwidth][c]{
+        \raisebox{-0.5\height}{\includegraphics[height=0.9cm]{logos/Logo_Université_Gustave_Eiffel.png}}
+        \hfill
+        \raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/Logo_LICIT-ECO7_horizontal.png}}
+        \hfill
+        \raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/Logo_ENTPE_long.jpg}}
+        
+        % --- POUR 4 ou 5 LOGOS ---
+        % Décommentez simplement les lignes ci-dessous
+        % \hfill
+        % \includegraphics[height=1.2cm]{logo4.png}
+        % \hfill
+        % \includegraphics[height=1.2cm]{logo5.png}
+    }
+}
+
+% --- Configuration du Footer (Pied de page) ---
+% \fancyfoot[L] = Gauche, [C] = Centre, [R] = Droite
+\fancyfoot[C]{\small \reportTitle \quad | \quad Page \thepage}
+
+% --- Ligne de séparation ---
+\renewcommand{\headrulewidth}{0.4pt} % Ligne sous le header
+\renewcommand{\headrule}{\hbox to\headwidth{\color{section_col}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0.4pt} % Ligne au-dessus du footer
+\renewcommand{\footrule}{\hbox to\headwidth{\color{section_col}\leaders\hrule height \footrulewidth\hfill}}
+
+% --- Configuration des Titres (avec couleurs et style italique) ---
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries\color{section_col}} % format
+    {\chaptertitlename\ \thechapter} % label
+    {20pt} % séparation
+    {\Huge} % code avant le titre
+    
+\titleformat{\section}
+    {\normalfont\Large\bfseries\itshape\color{section_col}} % format 
+    {\thesection} % label
+    {1em} % séparation
+    {} % code avant le titre
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\itshape\color{subsection_col}} % format 
+    {\thesubsection} % label
+    {1em} % séparation
+    {} % code avant le titre
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries\itshape\color{subsubsection_col}} % format 
+    {\thesubsubsection} % label
+    {1em} % séparation
+    {} % code avant le titre
