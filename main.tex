@@ -1,25 +1,26 @@
-\documentclass[12pt, a4paper]{report} % 'report' est standard pour les rapports techniques
+% !TeX program = xelatex
+\documentclass[12pt, a4paper]{report}
 
 % --- 1. CONFIGURATION ---
-% Importe tous les packages, commandes et la mise en page
 \input{00_Setup/preamble.tex}
 \input{00_Setup/commands.tex}
 \input{00_Setup/layout.tex}
 
-% --- 2. DÉBUT DU DOCUMENT ---
 \begin{document}
 
-% --- 3. PAGES PRÉLIMINAIRES ---
-\frontmatter % Style pour les pages avant le contenu principal (num. romaines, etc.)
-\pagestyle{empty} % Pas de header/footer sur ces premières pages
-
+% --- 2. PAGE DE GARDE (Page 1 - Vide d'en-têtes) ---
 \input{01_FrontMatter/titlepage.tex}
+
+% --- 3. CORRECTION PAGINATION ---
+% L'environnement titlepage remet le compteur à 1.
+% On le force à 2 pour une continuité parfaite avec le PDF.
+\setcounter{page}{2}
+
+% --- 4. PAGE ADMINISTRATIVE (Page 2 - Avec en-têtes) ---
 \input{01_FrontMatter/adminpage.tex}
 
-% --- 4. TABLES DES MATIÈRES ---
+% --- 5. TABLES ---
 \newpage
-\pagestyle{plain} % Style simple (juste num. de page) pour les tables
-
 \tableofcontents
 \newpage
 \listoffigures
@@ -27,19 +28,12 @@
 \listoftables
 \newpage
 
-% --- 5. CORPS DU RAPPORT ---
-\mainmatter % Commence la numérotation arabe (1, 2, 3...)
-\pagestyle{fancy} % Active votre header/footer personnalisé
-
+% --- 6. CORPS DU RAPPORT ---
 \input{02_Chapters/01_introduction.tex}
-\input{02_Chapters/02_methodologie.tex}
-% ... ajoutez vos autres chapitres ici
+% \input{02_Chapters/02_methodologie.tex}
 
-% --- 6. ANNEXES (Optionnel) ---
-\appendix % Passe en mode "Annexe A", "Annexe B"...
+% --- 7. ANNEXES ---
+\appendix
 \input{03_Appendices/annexe_A.tex}
-
-% --- 7. BIBLIOGRAPHIE (Optionnel) ---
-% \printbibliography
 
 \end{document}

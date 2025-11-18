@@ -1,41 +1,15 @@
-\newpage
-\thispagestyle{empty} % Pas de header/footer sur cette page non plus
+\chapter*{Informations Administratives}
 
-\section*{Informations Administratives}
-% Ajoute manuellement cette section au sommaire
-\addcontentsline{toc}{section}{Informations Administratives} 
+\section*{Historique des révisions}
 
-\subsection*{Historique des révisions}
-
-\noindent % Empêche l'indentation
-\begin{tabularx}{\textwidth}{l l X} % 'X' = colonne qui prend la place restante
+\noindent
+\begin{tabularx}{\textwidth}{l l X}
     \toprule
-    \textbf{Version} & \textbf{Date} & \textbf{Description des modifications} \\
+    \textbf{Version} & \textbf{Date} & \textbf{Description} \\
     \midrule
-    % Utilise la commande définie dans commands.tex
-    \addrevision{0.1.0}{\today}{Création initiale du document.}
-    \addrevision{0.2.0}{JJ/MM/AAAA}{Ajout du chapitre Méthodologie.}
-    \addrevision{1.0.0}{JJ/MM/AAAA}{Version finale pour relecture.}
-    \\ % Ligne vide pour l'espacement
-    \\
-    \\
+    \addrevision{0.1}{18/11/2025}{Création du template}
+    \addrevision{1.0}{JJ/MM/AAAA}{Validation finale}
     \bottomrule
 \end{tabularx}
 
 \vfill
-
-\subsection*{Approbations}
-% Vous pouvez ajouter d'autres sections ici (auteurs, approbateurs...)
-
-\noindent
-\begin{tabularx}{\textwidth}{X X}
-    \toprule
-    \textbf{Rôle} & \textbf{Nom} \\
-    \midrule
-    Rédacteur   & \reportAuthor \\
-    Vérificateur & [Nom du Vérificateur] \\
-    Approbateur  & [Nom de l'Approbateur] \\
-    \bottomrule
-\end{tabularx}
-
-\vfill % Pousse le contenu vers le haut
