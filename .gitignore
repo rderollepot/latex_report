@@ -11,6 +11,20 @@
 *.bbl
 *.blg
 *.brf
+*.xdv
+*.bcf
+*.run.xml
+*.synctex
+*.maf
+*.mtc*
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+
+# Config locale
+latexmkrc
 
 # Fichiers PDF générés
 *.pdf
