@@ -1,13 +1,12 @@
 % !TeX program = xelatex
 \documentclass[12pt, a4paper]{report}
 
-% 1. CHARGEMENT DE LA CONFIGURATION
 \input{00_Setup/packages.tex} % Les librairies
 \input{config.tex}            % Vos variables
 \input{00_Setup/styles.tex}   % Le design (Headers, Marges...)
 \input{00_Setup/macros.tex}   % Outils (Boites, Unités...)
 
-% 2. METADONNÉES PDF (Auto-générées)
+% --- METADONNÉES PDF ---
 \hypersetup{
     pdftitle={\ReportTitle},
     pdfauthor={\ReportAuthor},
@@ -20,7 +19,6 @@
 \input{01_FrontMatter/titlepage.tex}
 
 % --- CORRECTION COMPTEUR ---
-% La page de garde est la 1, la suivante sera la 2
 \setcounter{page}{2}
 
 % --- PAGE ADMINISTRATIVE (Page 2) ---
@@ -42,7 +40,7 @@
 \appendix
 \input{03_Appendices/annexe_A.tex}
 
-% --- BIBLIOGRAPHIE (Optionnel) ---
-% \printbibliography
+% --- BIBLIOGRAPHIE ---
+\printbibliography
 
 \end{document}

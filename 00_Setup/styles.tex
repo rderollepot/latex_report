@@ -32,62 +32,60 @@
 
 % --- 3. NUMÉROTATION ET TABLE DES MATIÈRES ---
 
-% Profondeur de la numérotation
-% 0=Chapitre, 1=Section, 2=Subsec, 3=Subsubsec (On active donc 1.1.1.1)
+% Profondeur de la numérotation (3 = 1.1.1.1)
 \setcounter{secnumdepth}{3}
 
 % Profondeur de la Table des Matières
 \setcounter{tocdepth}{3}
 
-% Désolidarise les figures et tableaux des chapitres (Fig 1, 2...)
+% Désolidarise les figures et tableaux des chapitres
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
-
 % --- 4. TITRES (TitleSec) - Configuration Hiérarchique ---
 
-% Chapitre (Niveau 0) - \huge (Très grand)
+% Chapitre (Niveau 0)
 \titleformat{\chapter}[display]
     {\normalfont\huge\bfseries\color{primaryColor}}
     {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
-% Section (Niveau 1) - \Large (Grand)
+% Section (Niveau 1)
 \titleformat{\section}
     {\normalfont\Large\bfseries\color{primaryColor}}
     {\thesection}{1em}{}
 
-% Sous-section (Niveau 2) - \large (Moyen)
+% Sous-section (Niveau 2)
 \titleformat{\subsection}
     {\normalfont\large\bfseries\color{secondaryColor}}
     {\thesubsection}{1em}{}
 
-% Sous-sous-section (Niveau 3) - \normalsize Gras (Standard renforcé)
+% Sous-sous-section (Niveau 3)
 \titleformat{\subsubsection}
     {\normalfont\normalsize\bfseries\color{tertiaryColor}}
     {\thesubsubsection}{1em}{}
 
-% Paragraphe (Niveau 4) - \normalsize Italique (Standard distingué)
+% Paragraphe (Niveau 4)
 \titleformat{\paragraph}
     {\normalfont\normalsize\itshape\color{primaryColor}} 
     {\theparagraph}{1em}{}
 
-% Sous-paragraphe (Niveau 5) - \small (Petit - Optionnel)
+% Sous-paragraphe (Niveau 5)
 \titleformat{\subparagraph}
     {\normalfont\small\itshape\color{gray}}
     {\thesubparagraph}{1em}{}
 
-
 % --- 5. ESPACEMENTS ---
 % Format : \titlespacing*{commande}{gauche}{avant}{après}
-% Note : Pour les titres non "run-in", le dernier argument est l'espace VERTICAL après le titre.
-
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-% Pour Paragraph et Subparagraph, on met un espace vertical positif en dernier argument
 \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}      
-\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em} 
-% Note : j'ai mis 0pt à gauche pour subparagraph pour l'aligner, 
-% remplacez par \parindent si vous voulez qu'il soit décalé.
+\titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}
+
+% --- 6. LISTES (Enumitem) ---
+% Personnalisation des puces par défaut
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=\textendash}
+\setlist[itemize,3]{label=\textasteriskcentered}

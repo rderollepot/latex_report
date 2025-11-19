@@ -1,5 +1,8 @@
 \usepackage[french]{babel}
 \usepackage{fontspec}
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{references.bib}
+
 % \setmainfont{Tahoma} 
 
 % --- Mise en page & Graphisme ---
@@ -30,8 +33,11 @@
 % --- Utilitaires ---
 \usepackage{csquotes}
 \usepackage{lipsum}
+\usepackage[all]{nowidow} % Évite les veuves et orphelines
+\usepackage{microtype}    % Améliore la justification
+
 
 % --- Navigation (En dernier) ---
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true, linkcolor=linkCol, urlcolor=linkCol, citecolor=linkCol]{hyperref}
 \usepackage{cleveref}   % Références intelligentes
 \graphicspath{{img/}}
