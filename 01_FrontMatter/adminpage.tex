@@ -1,14 +1,39 @@
 \chapter*{Informations Administratives}
+% Le header/footer s'affichera ici (Page 2)
 
-\section*{Historique des révisions}
+\section*{Historique des Modifications}
+
+% Utilisation de Tabularx pour que le tableau prenne toute la largeur
+% X = colonne qui s'adapte automatiquement au contenu restant
+\noindent
+\begin{tabularx}{\textwidth}{l l l X} 
+    \toprule
+    \textbf{Version} & \textbf{Date} & \textbf{Auteur} & \textbf{Description} \\
+    \midrule
+    
+    \revisionRow{0.1}{18/11/2025}{J. Dupont}{Création initiale de la structure.}
+    \revisionRow{0.2}{19/11/2025}{\ReportAuthor}{Ajout du chapitre Introduction.}
+    \revisionRow{1.0}{\today}{\ReportAuthor}{Validation finale pour diffusion.}
+    
+    \bottomrule
+\end{tabularx}
+
+\vfill
+
+\section*{Approbations}
+
+\noindent Ce document a été vérifié et approuvé par :
+
+\vspace{0.5cm}
 
 \noindent
-\begin{tabularx}{\textwidth}{l l X}
+\begin{tabularx}{\textwidth}{X X X}
     \toprule
-    \textbf{Version} & \textbf{Date} & \textbf{Description} \\
+    \textbf{Rôle} & \textbf{Nom} & \textbf{Signature} \\
     \midrule
-    \addrevision{0.1}{18/11/2025}{Création du template}
-    \addrevision{1.0}{JJ/MM/AAAA}{Validation finale}
+    Rédacteur & \ReportAuthor & \\[1.5cm] % Espace vertical pour signer
+    Vérificateur & [Nom du N+1] & \\[1.5cm]
+    Approbateur & [Direction Technique] & \\[1.5cm]
     \bottomrule
 \end{tabularx}
 

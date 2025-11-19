@@ -1,31 +1,43 @@
 \chapter{Introduction}
-\label{chap:introduction}
 
-Ceci est le premier chapitre de votre rapport. Vous pouvez utiliser du faux texte pour voir le rendu :
+\begin{summarybox}{Synthèse}
+    Démonstration des nouveaux réglages : numérotation continue des figures, unités en km/h, et profondeur des titres.
+\end{summarybox}
 
-\lipsum[1-2] % Génère 2 paragraphes de faux texte
+\section{Niveaux de Titres (Section)}
+Ceci est le texte standard sous une section.
 
-Vous pouvez référencer une figure (comme la \cref{fig:exemple}) ou une table (voir \cref{tab:exemple}).
+\subsection{Titre de niveau 2 (Subsection)}
+On descend dans la hiérarchie.
 
-\begin{figure}[h!] % [h!] = Tente de placer la figure "ici"
+\subsubsection{Titre de niveau 3 (Subsubsection)}
+Encore un niveau en dessous.
+
+\paragraph{Titre de niveau 4 (Paragraph)} 
+Notez que le texte commence juste après le titre sur la même ligne (style "runin"). C'est très utile pour les définitions ou les points techniques.
+
+\subparagraph{Titre de niveau 5 (Subparagraph)} 
+Le niveau le plus bas, souvent en italique ou gris pour des nuances fines.
+
+\section{Démonstration Siunitx (Mise à jour)}
+
+Voici la comparaison des affichages avec l'option \texttt{per-mode = symbol} activée :
+
+\begin{itemize}
+    \item Vitesse : \qty{90}{\kilo\meter\per\hour} (au lieu de km.h\textsuperscript{-1})
+    \item Accélération : \qty{9.81}{\meter\per\second\squared} (affiche m/s\textsuperscript{2})
+    \item Débit : \qty{50}{\liter\per\minute}
+\end{itemize}
+
+\section{Test Numérotation Figure}
+
+La figure ci-dessous devrait être numérotée "Figure 1" et non "Figure 1.1".
+
+\begin{figure}[hbt!]
     \centering
-    \includegraphics[width=0.6\textwidth]{logos/Logo_LICIT-ECO7_vertical.png}
-    \caption{Ceci est un exemple de figure.}
-    \label{fig:exemple}
+    \includegraphics[height=8cm]{img/logos/Logo_LICIT-ECO7_vertical.png}
+    \caption{Exemple de figure avec numérotation continue}
+    \label{fig:test_num}
 \end{figure}
 
-\begin{table}[h!]
-    \centering
-    \caption{Ceci est un exemple de tableau.}
-    \label{tab:exemple}
-    \begin{tabular}{lcc}
-        \toprule
-        Paramètre & Valeur & Unité \\
-        \midrule
-        Vitesse   & 100    & m/s   \\
-        Pression  & 50     & Pa    \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\lipsum[3]
+Comme on le voit sur la \cref{fig:test_num}, le numéro est global.

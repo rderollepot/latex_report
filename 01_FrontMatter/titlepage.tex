@@ -1,44 +1,36 @@
 \begin{titlepage}
     \centering
-    \vspace*{1cm} % Espace en haut
-
-    % --- Logos ---
-    % On réutilise la même logique que le header pour la cohérence
+    
+    % Logos
     \makebox[\textwidth][c]{
-        \raisebox{-0.5\height}{\includegraphics[height=1.2cm]{logos/Logo_Université_Gustave_Eiffel.png}}
+        \raisebox{-0.5\height}{\includegraphics[height=1.1cm]{\LogoLeft}}
         \hfill
-        \raisebox{-0.5\height}{\includegraphics[height=1.5cm]{logos/Logo_ENTPE_long.jpg}}
+        \raisebox{-0.5\height}{\includegraphics[height=1.5cm]{\LogoRight}}
     }
     
-    \vspace*{2cm} % Espace
+    \vspace*{2cm}
     
     \makebox[\textwidth][c]{
         \hfill
-        \raisebox{-0.5\height}{\includegraphics[height=2cm]{logos/Logo_LICIT-ECO7_horizontal.png}}
+        \includegraphics[height=2cm]{\LogoCenter}
         \hfill
     }
+    
+    \vspace*{4cm}
 
-    \vspace*{3cm} % Espace
+    % Title
+    {\Huge \bfseries \textcolor{primaryColor}{\ReportTitle} \par}
+    \vspace{1cm}
+    {\Large \bfseries \ReportSubtitle \par}
+    
+    \vfill
 
-    % --- Titres ---
-    {\Huge \bfseries \reportTitle \par}
-    \vspace{1cm}
-    {\Large \reportSubtitle \par}
-    
-    \vfill % Pousse le contenu suivant vers le bas
-    
-    % --- Auteur et Version ---
-    {\Large \reportAuthor \par}
-    {\large \reportAuthorTeam \par}
-    
-    \vspace{1cm}
-    {\large Version \reportVersion \par}
+    % Author
+    {\Large \textbf{\ReportAuthor} \par}
+    {\large \ReportTeam \par}
     
     \vspace{2cm}
-    
-    % --- Date ---
-    {\large \reportDate \par}
-    
-    \vspace{1cm} % Espace en bas
-
+    {\large Version \ReportVersion \par}
+    {\large \ReportDate \par}
+    \vspace*{1cm}
 \end{titlepage}

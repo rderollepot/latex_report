@@ -1,39 +1,48 @@
 % !TeX program = xelatex
 \documentclass[12pt, a4paper]{report}
 
-% --- 1. CONFIGURATION ---
-\input{00_Setup/preamble.tex}
-\input{00_Setup/commands.tex}
-\input{00_Setup/layout.tex}
+% 1. CHARGEMENT DE LA CONFIGURATION
+\input{00_Setup/packages.tex} % Les librairies
+\input{config.tex}            % Vos variables
+\input{00_Setup/styles.tex}   % Le design (Headers, Marges...)
+\input{00_Setup/macros.tex}   % Outils (Boites, Unités...)
+
+% 2. METADONNÉES PDF (Auto-générées)
+\hypersetup{
+    pdftitle={\ReportTitle},
+    pdfauthor={\ReportAuthor},
+    pdfsubject={\ReportSubtitle}
+}
 
 \begin{document}
 
-% --- 2. PAGE DE GARDE (Page 1 - Vide d'en-têtes) ---
+% --- PAGE DE GARDE (Page 1) ---
 \input{01_FrontMatter/titlepage.tex}
 
-% --- 3. CORRECTION PAGINATION ---
-% L'environnement titlepage remet le compteur à 1.
-% On le force à 2 pour une continuité parfaite avec le PDF.
+% --- CORRECTION COMPTEUR ---
+% La page de garde est la 1, la suivante sera la 2
 \setcounter{page}{2}
 
-% --- 4. PAGE ADMINISTRATIVE (Page 2 - Avec en-têtes) ---
+% --- PAGE ADMINISTRATIVE (Page 2) ---
 \input{01_FrontMatter/adminpage.tex}
 
-% --- 5. TABLES ---
+% --- TABLES DES MATIÈRES ---
 \newpage
 \tableofcontents
 \newpage
 \listoffigures
-\newpage
 \listoftables
 \newpage
 
-% --- 6. CORPS DU RAPPORT ---
+% --- CONTENU ---
 \input{02_Chapters/01_introduction.tex}
-% \input{02_Chapters/02_methodologie.tex}
+% \input{02_Chapters/02_analyse.tex}
 
-% --- 7. ANNEXES ---
+% --- ANNEXES ---
 \appendix
 \input{03_Appendices/annexe_A.tex}
+
+% --- BIBLIOGRAPHIE (Optionnel) ---
+% \printbibliography
 
 \end{document}

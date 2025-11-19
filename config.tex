@@ -1,0 +1,29 @@
+% --- INFO DU RAPPORT ---
+\newcommand{\ReportTitle}{Audit Technique de l'Infrastructure}
+\newcommand{\ReportSubtitle}{Rapport d'analyse et préconisations}
+\newcommand{\ReportAuthor}{Jean Dupont}
+\newcommand{\ReportTeam}{Service Ingénierie}
+\newcommand{\ReportVersion}{1.2.0}
+\newcommand{\ReportDate}{\today}
+
+% --- FICHIERS LOGO (Dans le dossier img/) ---
+\newcommand{\LogoLeft}{logos/Logo_Université_Gustave_Eiffel.png}
+\newcommand{\LogoCenter}{logos/Logo_LICIT-ECO7_horizontal.png}
+\newcommand{\LogoRight}{logos/Logo_ENTPE_long.jpg}
+
+% --- COULEURS (Charte Graphique Institutionnelle) ---
+% 1. Définition des couleurs brutes (basées sur les logos)
+% Bleu foncé (UGE / ENTPE Navy) - Pour la structure principale
+\definecolor{brandDarkBlue}{rgb}{0.16, 0.18, 0.46} 
+% Cyan (LICIT / ENTPE Light Blue) - Pour le dynamisme
+\definecolor{brandCyan}{rgb}{0.20, 0.76, 0.89}
+% Vert Anis (LICIT Eco) - Pour les détails et bas niveaux
+\definecolor{brandGreen}{rgb}{0.64, 0.84, 0.36}
+% Gris (ENTPE Slash) - Pour les textes discrets (footer)
+\definecolor{brandGrey}{rgb}{0.55, 0.61, 0.63}
+
+% 2. Affectation sémantique (Mapping)
+\colorlet{primaryColor}{brandDarkBlue}   % Chapitres, Sections
+\colorlet{secondaryColor}{brandCyan}     % Sous-sections
+\colorlet{tertiaryColor}{brandGreen}     % Sous-sous-sections
+\definecolor{linkCol}{named}{brandDarkBlue}

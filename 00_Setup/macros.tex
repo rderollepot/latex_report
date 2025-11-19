@@ -1,0 +1,13 @@
+% --- Boîte de Résumé / Recommandation ---
+% Usage: \begin{summarybox}{Titre} ... \end{summarybox}
+\newtcolorbox{summarybox}[1]{
+    colback=primaryColor!5!white, % Fond très clair
+    colframe=primaryColor,        % Bordure couleur principale
+    fonttitle=\bfseries,
+    title=#1,
+    sharp corners=south,          % Coins arrondis juste en haut
+    boxrule=0.5mm
+}
+
+% --- Tableau Administratif Standardisé ---
+\newcommand{\revisionRow}[4]{#1 & #2 & #3 & #4 \\}

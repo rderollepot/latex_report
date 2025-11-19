@@ -1,0 +1,37 @@
+\usepackage[french]{babel}
+\usepackage{fontspec}
+% \setmainfont{Tahoma} 
+
+% --- Mise en page & Graphisme ---
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[most]{tcolorbox} % Pour les encadrés modernes
+
+% --- Tableaux & Listes ---
+\usepackage{tabularx}   % Tableaux à largeur auto
+\usepackage{booktabs}   % Traits horizontaux élégants
+\usepackage{enumitem}   % Personnalisation des listes
+
+% --- Sciences & Technique ---
+\usepackage{siunitx}    % INDISPENSABLE pour les unités (ex: \qty{10}{\kilo\gram})
+\sisetup{
+    locale = FR,             % Conventions typographiques françaises
+    detect-all,              % Utilise la police du texte environnant
+    per-mode = symbol,       % Affiche "km/h" au lieu de "km h^-1"
+    group-separator = {\ },  % Espace comme séparateur de milliers
+    inter-unit-product = \., % Point entre les unités (ex: N.m)
+    sticky-per               % Évite les ambiguïtés mathématiques
+}
+
+% --- Utilitaires ---
+\usepackage{csquotes}
+\usepackage{lipsum}
+
+% --- Navigation (En dernier) ---
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}   % Références intelligentes
+\graphicspath{{img/}}
