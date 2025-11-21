@@ -1,4 +1,13 @@
-% --- INFO DU RAPPORT ---
+% =============================================================================
+% CONFIG - Variables de configuration du document
+% =============================================================================
+% Ce fichier contient toutes les variables personnalisables du rapport :
+% métadonnées, chemins vers les logos, et définition de la charte graphique.
+
+% =============================================================================
+% INFORMATIONS DU RAPPORT
+% =============================================================================
+
 \newcommand{\ReportTitle}{Audit Technique de l'Infrastructure}
 \newcommand{\ReportSubtitle}{Rapport d'analyse et préconisations}
 \newcommand{\ReportAuthor}{Jean Dupont}
@@ -6,25 +15,28 @@
 \newcommand{\ReportVersion}{1.2.0}
 \newcommand{\ReportDate}{\today}
 
-% --- FICHIERS LOGO (Dans le dossier img/) ---
-\newcommand{\LogoLeft}{logos/Logo_Université_Gustave_Eiffel.png}
+% =============================================================================
+% FICHIERS LOGO
+% =============================================================================
+% Chemins relatifs depuis le dossier img/ (configuré via \graphicspath)
+
+\newcommand{\LogoLeft}{logos/Logo_Université_Gustave_Eiffel.png}
 \newcommand{\LogoCenter}{logos/Logo_LICIT-ECO7_horizontal.png}
 \newcommand{\LogoRight}{logos/Logo_ENTPE_long.jpg}
 
-% --- COULEURS ---
-% 1. Définition des couleurs brutes
+% =============================================================================
+% CHARTE GRAPHIQUE - Couleurs
+% =============================================================================
 
-% Bleu foncé
-\definecolor{brandDarkBlue}{rgb}{0.16, 0.18, 0.46} 
-% Cyan
-\definecolor{brandCyan}{rgb}{0.20, 0.76, 0.89}
-% Vert Anis
-\definecolor{brandGreen}{rgb}{0.64, 0.84, 0.36}
-% Gris
-\definecolor{brandGrey}{rgb}{0.55, 0.61, 0.63}
+% Définition des couleurs brutes de la charte graphique
+\definecolor{brandDarkBlue}{rgb}{0.16, 0.18, 0.46}  % Bleu foncé institutionnel
+\definecolor{brandCyan}{rgb}{0.20, 0.76, 0.89}      % Cyan dynamique
+\definecolor{brandGreen}{rgb}{0.64, 0.84, 0.36}     % Vert anis
+\definecolor{brandGrey}{rgb}{0.55, 0.61, 0.63}      % Gris neutre
 
-% 2. Affectation sémantique (Mapping)
-\colorlet{primaryColor}{brandDarkBlue}   % Chapitres, Sections
-\colorlet{secondaryColor}{brandCyan}     % Sous-sections
-\colorlet{tertiaryColor}{brandGreen}     % Sous-sous-sections
+% Affectation sémantique des couleurs (Mapping)
+% Ces couleurs sont utilisées dans les titres, boîtes et liens.
+\colorlet{primaryColor}{brandDarkBlue}    % Chapitres, sections, liens
+\colorlet{secondaryColor}{brandCyan}      % Sous-sections
+\colorlet{tertiaryColor}{brandGreen}      % Sous-sous-sections
 \definecolor{linkCol}{named}{brandDarkBlue}

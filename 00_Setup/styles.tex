@@ -1,14 +1,26 @@
-% --- 1. MARGES & GÉOMÉTRIE ---
+% =============================================================================
+% STYLES - Configuration de la mise en page et du design
+% =============================================================================
+% Ce fichier configure l'apparence visuelle du document :
+% marges, en-têtes, pieds de page, titres et numérotation.
+
+% =============================================================================
+% MARGES ET GÉOMÉTRIE
+% =============================================================================
+
 \geometry{
     top=3cm, bottom=2cm, left=2cm, right=2cm,
     headheight=2.5cm, footskip=1.2cm
 }
 
-% --- 2. HEADER & FOOTER (FancyHDR) ---
+% =============================================================================
+% EN-TÊTES ET PIEDS DE PAGE (fancyhdr)
+% =============================================================================
+
 \pagestyle{fancy}
 \fancyhf{}
 
-% Header : Logos dynamiques via variables
+% En-tête : logos dynamiques via variables de config.tex
 \fancyhead[C]{
     \fancyhdrbox{\includegraphics[height=0.9cm]{\LogoLeft}}
     \hfill
@@ -17,78 +29,94 @@
     \fancyhdrbox{\includegraphics[height=1.2cm]{\LogoRight}}
 }
 
-% Footer
+% Pied de page
 \fancyfoot[L]{\footnotesize \textcolor{gray}{\textit{\ReportTitle}}}
 \fancyfoot[R]{\footnotesize \textcolor{gray}{Page \thepage\ / \pageref*{LastPage}}}
 
-% Filets colorés
+% Filets colorés pour header et footer
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{primaryColor}\leaders\hrule height \headrulewidth\hfill}}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\footrule}{\hbox to\headwidth{\color{primaryColor}\leaders\hrule height \footrulewidth\hfill}}
 
-% Force le style fancy sur les chapitres
+% Force le style fancy sur les pages de chapitre
 \assignpagestyle{\chapter}{fancy}
 
-% --- 3. NUMÉROTATION ET TABLE DES MATIÈRES ---
+% =============================================================================
+% NUMÉROTATION ET TABLE DES MATIÈRES
+% =============================================================================
 
-% Profondeur de la numérotation (3 = 1.1.1.1)
+% Profondeur de la numérotation des sections (3 = jusqu'à subsubsection)
 \setcounter{secnumdepth}{3}
 
-% Profondeur de la Table des Matières
+% Profondeur de la table des matières
 \setcounter{tocdepth}{3}
 
-% Désolidarise les figures et tableaux des chapitres
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
-\counterwithout{equation}{chapter}
-% Note: minted uses 'listing' counter by default
-\AtBeginDocument{\counterwithout{listing}{chapter}}
+% Numérotation continue (indépendante des chapitres)
+% Les commandes sont exécutées dans AtBeginDocument pour compatibilité avec cleveref.
+\AtBeginDocument{
+    \counterwithout{figure}{chapter}
+    \counterwithout{table}{chapter}
+    \counterwithout{equation}{chapter}
+    \counterwithout{listing}{chapter}
+    % Reconfiguration de cleveref pour numérotation simple
+    \creflabelformat{figure}{#2#1#3}
+    \creflabelformat{table}{#2#1#3}
+    \creflabelformat{equation}{#2(#1)#3}
+    \creflabelformat{listing}{#2#1#3}
+}
 
-% --- 4. TITRES (TitleSec) - Configuration Hiérarchique ---
+% =============================================================================
+% TITRES - Configuration hiérarchique (titlesec)
+% =============================================================================
 
-% Chapitre (Niveau 0)
+% Chapitre (niveau 0)
 \titleformat{\chapter}[display]
     {\normalfont\huge\bfseries\color{primaryColor}}
     {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
-% Section (Niveau 1)
+% Section (niveau 1)
 \titleformat{\section}
     {\normalfont\Large\bfseries\color{primaryColor}}
     {\thesection}{1em}{}
 
-% Sous-section (Niveau 2)
+% Sous-section (niveau 2)
 \titleformat{\subsection}
     {\normalfont\large\bfseries\color{secondaryColor}}
     {\thesubsection}{1em}{}
 
-% Sous-sous-section (Niveau 3)
+% Sous-sous-section (niveau 3)
 \titleformat{\subsubsection}
     {\normalfont\normalsize\bfseries\color{tertiaryColor}}
     {\thesubsubsection}{1em}{}
 
-% Paragraphe (Niveau 4)
+% Paragraphe (niveau 4)
 \titleformat{\paragraph}
     {\normalfont\normalsize\itshape\color{primaryColor}} 
     {\theparagraph}{1em}{}
 
-% Sous-paragraphe (Niveau 5)
+% Sous-paragraphe (niveau 5)
 \titleformat{\subparagraph}
     {\normalfont\small\itshape\color{gray}}
     {\thesubparagraph}{1em}{}
 
-% --- 5. ESPACEMENTS ---
+% =============================================================================
+% ESPACEMENTS DES TITRES
+% =============================================================================
 % Format : \titlespacing*{commande}{gauche}{avant}{après}
+
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
 \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}      
 \titlespacing*{\subparagraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}
 
-% --- 6. LISTES (Enumitem) ---
-% Personnalisation des puces par défaut
+% =============================================================================
+% LISTES (enumitem)
+% =============================================================================
+% Personnalisation des symboles de puces par défaut.
+
 \setlist[itemize,1]{label=\textbullet}
 \setlist[itemize,2]{label=\textendash}
 \setlist[itemize,3]{label=\textasteriskcentered}

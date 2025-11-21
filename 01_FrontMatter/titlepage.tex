@@ -1,7 +1,12 @@
+% =============================================================================
+% TITLEPAGE - Page de garde du rapport
+% =============================================================================
+% Cette page affiche les logos, le titre, l'auteur et les métadonnées.
+
 \begin{titlepage}
     \centering
     
-    % Logos
+    % Logos en haut de page (gauche et droite)
     \makebox[\textwidth][c]{
         \raisebox{-0.5\height}{\includegraphics[height=1.1cm]{\LogoLeft}}
         \hfill
@@ -10,6 +15,7 @@
     
     \vspace*{2cm}
     
+    % Logo central
     \makebox[\textwidth][c]{
         \hfill
         \includegraphics[height=2cm]{\LogoCenter}
@@ -18,18 +24,20 @@
     
     \vspace*{4cm}
 
-    % Title
+    % Titre et sous-titre
     {\Huge \bfseries \textcolor{primaryColor}{\ReportTitle} \par}
     \vspace{1cm}
     {\Large \bfseries \ReportSubtitle \par}
     
     \vfill
 
-    % Author
+    % Informations auteur et équipe
     {\Large \textbf{\ReportAuthor} \par}
     {\large \ReportTeam \par}
     
     \vspace{2cm}
+    
+    % Version et date
     {\large Version \ReportVersion \par}
     {\large \ReportDate \par}
     \vspace*{1cm}

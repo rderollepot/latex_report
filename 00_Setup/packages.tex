@@ -1,32 +1,58 @@
-\usepackage[french]{babel}
+% =============================================================================
+% PACKAGES - Chargement des extensions LaTeX
+% =============================================================================
+% Ce fichier charge tous les packages nécessaires au document.
+% L'ordre de chargement est important pour éviter les conflits.
 
-% --- Polices & Typographie (État de l'art) ---
-\usepackage{libertinus} % Police moderne, complète (Serif, Sans, Mono, Math)
+% =============================================================================
+% LANGUE ET TYPOGRAPHIE
+% =============================================================================
+
+\usepackage[french]{babel}
+\usepackage{mathtools}  % Extension d'amsmath - DOIT ÊTRE AVANT unicode-math
+
+% Polices modernes et complètes (Libertinus)
 % Note: libertinus charge fontspec automatiquement avec XeLaTeX/LuaLaTeX
+\PassOptionsToPackage{warnings-off={mathtools-colon,mathtools-overbracket}}{unicode-math}
+\usepackage{libertinus}  % Police Serif, Sans, Mono et Math
+
+% =============================================================================
+% BIBLIOGRAPHIE
+% =============================================================================
 
 \usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{references.bib}
 
-% --- Mise en page & Graphisme ---
+% =============================================================================
+% MISE EN PAGE ET GRAPHISME
+% =============================================================================
+
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage[most]{tcolorbox} % Pour les encadrés modernes
-\usepackage{float}      % Pour le placement H des figures
-\usepackage{caption}    % Meilleure gestion des légendes
-\usepackage{subcaption} % Pour les sous-figures
+\usepackage[most]{tcolorbox}  % Encadrés modernes et colorés
+\usepackage{float}            % Placement H des figures
+\usepackage{caption}          % Meilleure gestion des légendes
+\usepackage{subcaption}       % Sous-figures
 
-% --- Tableaux & Listes ---
-\usepackage{tabularx}   % Tableaux à largeur auto
+% =============================================================================
+% TABLEAUX ET LISTES
+% =============================================================================
+
+\usepackage{tabularx}   % Tableaux à largeur automatique
 \usepackage{booktabs}   % Traits horizontaux élégants
-\usepackage{enumitem}   % Personnalisation des listes
+\usepackage{enumitem}   % Personnalisation avancée des listes
 
-% --- Sciences & Technique ---
-\usepackage{mathtools}  % Extension d'amsmath (correction de bugs + fonctionnalités)
-\usepackage{siunitx}    % INDISPENSABLE pour les unités (ex: \qty{10}{\kilo\gram})
+% =============================================================================
+% SCIENCES ET TECHNIQUES
+% =============================================================================
+
+% Package siunitx pour les unités physiques
+% Indispensable pour une typographie correcte des mesures.
+\usepackage{siunitx}
 \sisetup{
     locale = FR,             % Conventions typographiques françaises
     detect-all,              % Utilise la police du texte environnant
@@ -36,16 +62,24 @@
     sticky-per               % Évite les ambiguïtés mathématiques
 }
 
-% --- Utilitaires ---
-\usepackage{csquotes}
-\usepackage{lipsum}
-\usepackage[all]{nowidow} % Évite les veuves et orphelines
-\usepackage{microtype}    % Améliore la justification
-\usepackage[cache=false]{minted} % Code highlighting (requires -shell-escape usually, but we use latexmk)
+% =============================================================================
+% UTILITAIRES
+% =============================================================================
+
+\usepackage[cache=false]{minted}  % Coloration syntaxique du code
 \usemintedstyle{friendly}
+\usepackage{csquotes}             % Citations intelligentes
+\usepackage{lipsum}               % Texte de remplissage (lorem ipsum)
+\usepackage[all]{nowidow}         % Évite les veuves et orphelines
+\usepackage{microtype}            % Améliore la justification
 
+% =============================================================================
+% NAVIGATION ET HYPERLIENS
+% =============================================================================
+% Packages de navigation à charger en dernier pour éviter les conflits.
 
-% --- Navigation (En dernier) ---
 \usepackage[colorlinks=true, linkcolor=linkCol, urlcolor=linkCol, citecolor=linkCol]{hyperref}
-\usepackage{cleveref}   % Références intelligentes
+\usepackage{cleveref}  % Références intelligentes (\cref)
+
+% Configuration du chemin vers les images
 \graphicspath{{img/}}

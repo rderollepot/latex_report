@@ -1,5 +1,15 @@
-% --- Boîte de Résumé / Recommandation ---
-% Usage: \begin{summarybox}{Titre} ... \end{summarybox}
+% =============================================================================
+% MACROS - Commandes personnalisées et boîtes colorées
+% =============================================================================
+% Ce fichier définit les macros réutilisables pour le document.
+% Il inclut des boîtes colorées (tcolorbox) et des commandes utilitaires.
+
+% =============================================================================
+% BOÎTES COLORÉES (tcolorbox)
+% =============================================================================
+
+% Boîte de résumé ou recommandation
+% Usage: \begin{summarybox}{Titre} Contenu \end{summarybox}
 \newtcolorbox{summarybox}[1]{
     colback=primaryColor!5!white,
     colframe=primaryColor,
@@ -9,8 +19,8 @@
     boxrule=0.5mm
 }
 
-% --- Boîte d'Information ---
-% Usage: \begin{infobox}{Titre} ... \end{infobox}
+% Boîte d'information
+% Usage: \begin{infobox}{Titre} Contenu \end{infobox}
 \newtcolorbox{infobox}[1]{
     colback=brandCyan!5!white,
     colframe=brandCyan,
@@ -20,8 +30,8 @@
     boxrule=0.5mm
 }
 
-% --- Boîte d'Alerte / Attention ---
-% Usage: \begin{alertbox}{Titre} ... \end{alertbox}
+% Boîte d'alerte ou d'attention
+% Usage: \begin{alertbox}{Titre} Contenu \end{alertbox}
 \newtcolorbox{alertbox}[1]{
     colback=red!5!white,
     colframe=red!75!black,
@@ -31,5 +41,10 @@
     boxrule=0.5mm
 }
 
-% --- Tableau Administratif Standardisé ---
+% =============================================================================
+% COMMANDES UTILITAIRES
+% =============================================================================
+
+% Ligne pour le tableau de révision administrative
+% Usage: \revisionRow{Version}{Date}{Auteur}{Description}
 \newcommand{\revisionRow}[4]{#1 & #2 & #3 & #4 \\}

@@ -1,31 +1,55 @@
+% =============================================================================
+% MAIN - Document principal du rapport technique
+% =============================================================================
+% Ce fichier est le point d'entrée du document LaTeX.
+% Il charge les configurations, packages et contenu.
+%
+% Compilation : xelatex avec latexmk
+% Commande : latexmk -pdf main.tex
+
 % !TeX program = xelatex
 \RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[12pt, a4paper]{report}
+\special{pdf:minorversion 7}
 
-\input{00_Setup/packages.tex} % Les librairies
-\input{config.tex}            % Vos variables
-\input{00_Setup/styles.tex}   % Le design (Headers, Marges...)
-\input{00_Setup/macros.tex}   % Outils (Boites, Unités...)
+% =============================================================================
+% CHARGEMENT DES CONFIGURATIONS
+% =============================================================================
 
-% --- METADONNÉES PDF ---
+\input{00_Setup/packages.tex}  % Packages LaTeX
+\input{config.tex}             % Variables de configuration
+\input{00_Setup/styles.tex}    % Design et mise en page
+\input{00_Setup/macros.tex}    % Macros personnalisées
+
+% =============================================================================
+% MÉTADONNÉES PDF
+% =============================================================================
+
 \hypersetup{
     pdftitle={\ReportTitle},
     pdfauthor={\ReportAuthor},
     pdfsubject={\ReportSubtitle}
 }
 
+% =============================================================================
+% DÉBUT DU DOCUMENT
+% =============================================================================
+
 \begin{document}
 
-% --- PAGE DE GARDE (Page 1) ---
+% Page de garde (page 1)
 \input{01_FrontMatter/titlepage.tex}
 
-% --- CORRECTION COMPTEUR ---
+% Correction du compteur de page
 \setcounter{page}{2}
 
-% --- PAGE ADMINISTRATIVE (Page 2) ---
+% Page administrative (page 2)
 \input{01_FrontMatter/adminpage.tex}
 
-% --- TABLES DES MATIÈRES ---
+% =============================================================================
+% TABLES DES MATIÈRES
+% =============================================================================
+
 \newpage
 \tableofcontents
 \newpage
@@ -33,16 +57,25 @@
 \listoftables
 \newpage
 
-% --- CONTENU ---
+% =============================================================================
+% CONTENU PRINCIPAL
+% =============================================================================
+
 \input{02_Chapters/01_introduction.tex}
 \input{02_Chapters/02_methodologie.tex}
 \input{02_Chapters/03_resultats.tex}
 
-% --- ANNEXES ---
+% =============================================================================
+% ANNEXES
+% =============================================================================
+
 \appendix
 \input{03_Appendices/annexe_A.tex}
 
-% --- BIBLIOGRAPHIE ---
+% =============================================================================
+% BIBLIOGRAPHIE
+% =============================================================================
+
 \printbibliography
 
 \end{document}
