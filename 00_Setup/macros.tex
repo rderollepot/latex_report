@@ -9,5 +9,27 @@
     boxrule=0.5mm
 }
 
+% --- Boîte d'Information ---
+% Usage: \begin{infobox}{Titre} ... \end{infobox}
+\newtcolorbox{infobox}[1]{
+    colback=brandCyan!5!white,
+    colframe=brandCyan,
+    fonttitle=\bfseries,
+    title=#1,
+    sharp corners=south,
+    boxrule=0.5mm
+}
+
+% --- Boîte d'Alerte / Attention ---
+% Usage: \begin{alertbox}{Titre} ... \end{alertbox}
+\newtcolorbox{alertbox}[1]{
+    colback=red!5!white,
+    colframe=red!75!black,
+    fonttitle=\bfseries,
+    title=#1,
+    sharp corners=south,
+    boxrule=0.5mm
+}
+
 % --- Tableau Administratif Standardisé ---
 \newcommand{\revisionRow}[4]{#1 & #2 & #3 & #4 \\}

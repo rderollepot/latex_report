@@ -41,6 +41,9 @@
 % Désolidarise les figures et tableaux des chapitres
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+% Note: minted uses 'listing' counter by default
+\AtBeginDocument{\counterwithout{listing}{chapter}}
 
 % --- 4. TITRES (TitleSec) - Configuration Hiérarchique ---
 

@@ -1,9 +1,11 @@
 \usepackage[french]{babel}
-\usepackage{fontspec}
+
+% --- Polices & Typographie (État de l'art) ---
+\usepackage{libertinus} % Police moderne, complète (Serif, Sans, Mono, Math)
+% Note: libertinus charge fontspec automatiquement avec XeLaTeX/LuaLaTeX
+
 \usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{references.bib}
-
-% \setmainfont{Tahoma} 
 
 % --- Mise en page & Graphisme ---
 \usepackage{geometry}
@@ -13,6 +15,9 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage[most]{tcolorbox} % Pour les encadrés modernes
+\usepackage{float}      % Pour le placement H des figures
+\usepackage{caption}    % Meilleure gestion des légendes
+\usepackage{subcaption} % Pour les sous-figures
 
 % --- Tableaux & Listes ---
 \usepackage{tabularx}   % Tableaux à largeur auto
@@ -20,6 +25,7 @@
 \usepackage{enumitem}   % Personnalisation des listes
 
 % --- Sciences & Technique ---
+\usepackage{mathtools}  % Extension d'amsmath (correction de bugs + fonctionnalités)
 \usepackage{siunitx}    % INDISPENSABLE pour les unités (ex: \qty{10}{\kilo\gram})
 \sisetup{
     locale = FR,             % Conventions typographiques françaises
@@ -35,6 +41,8 @@
 \usepackage{lipsum}
 \usepackage[all]{nowidow} % Évite les veuves et orphelines
 \usepackage{microtype}    % Améliore la justification
+\usepackage[cache=false]{minted} % Code highlighting (requires -shell-escape usually, but we use latexmk)
+\usemintedstyle{friendly}
 
 
 % --- Navigation (En dernier) ---

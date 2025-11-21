@@ -1,0 +1,50 @@
+\chapter{Résultats}
+\label{chap:resultats}
+
+\section{Analyse des Performances}
+
+Les résultats sont présentés sous forme de tableaux et de figures.
+
+\subsection{Tableaux Élégants}
+
+Nous utilisons \texttt{booktabs} pour des tableaux professionnels (pas de lignes verticales).
+
+\begin{table}[hbt!]
+    \centering
+    \caption{Comparaison des performances}
+    \label{tab:perf}
+    \begin{tabular}{l c c r}
+        \toprule
+        \textbf{Modèle} & \textbf{Précision} & \textbf{Rappel} & \textbf{Temps (s)} \\
+        \midrule
+        Modèle A & 0.85 & 0.78 & 12.5 \\
+        Modèle B & 0.92 & 0.88 & 15.2 \\
+        Modèle C & 0.89 & 0.82 & 10.1 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Illustrations}
+
+L'utilisation de \texttt{subcaption} permet de grouper des figures.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/logos/Logo_LICIT-ECO7_vertical.png}
+        \caption{Logo Vertical}
+        \label{fig:logo_vert}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/logos/Logo_Université_Gustave_Eiffel_short.png}
+        \caption{Logo Court}
+        \label{fig:logo_short}
+    \end{subfigure}
+    \caption{Comparaison des identités visuelles}
+    \label{fig:logos}
+\end{figure}
+
+Comme illustré dans la \cref{fig:logos}, nous avons deux variantes.

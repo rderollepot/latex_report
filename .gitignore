@@ -23,9 +23,6 @@
 *.glo
 *.gls
 
-# Config locale
-latexmkrc
-
 # Fichiers PDF générés
 *.pdf
 

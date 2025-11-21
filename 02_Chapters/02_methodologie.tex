@@ -1,0 +1,66 @@
+\chapter{Méthodologie}
+\label{chap:methodo}
+
+\begin{summarybox}{Objectifs}
+    Ce chapitre présente les méthodes utilisées, en mettant l'accent sur la mise en forme des équations mathématiques complexes et du code.
+\end{summarybox}
+
+\section{Modélisation Mathématique}
+
+Nous utilisons des équations pour décrire le système. Grâce au package \texttt{mathtools}, nous pouvons définir des symboles proprement.
+
+\subsection{Équations de base}
+
+L'équation d'Einstein est donnée par :
+\begin{equation}
+    E = mc^2
+    \label{eq:einstein}
+\end{equation}
+
+\subsection{Systèmes d'équations}
+
+Voici un exemple d'alignement d'équations avec \texttt{align} :
+\begin{align}
+    f(x) &= x^2 + 2x + 1 \\
+         &= (x+1)^2
+\end{align}
+
+\subsection{Définitions et Cas}
+
+L'utilisation de \texttt{cases} est améliorée par \texttt{mathtools} (via \texttt{dcases} pour l'affichage display) :
+\begin{equation}
+    u(x) = 
+    \begin{dcases}
+        0 & \text{si } x < 0 \\
+        1 & \text{si } x \geq 0
+    \end{dcases}
+\end{equation}
+
+\section{Implémentation (Code)}
+
+Voici comment nous implémentons la fonction ci-dessus en Python.
+
+\begin{infobox}{Information}
+    Le code ci-dessous utilise la bibliothèque standard.
+\end{infobox}
+
+\begin{listing}[H]
+\begin{minted}{python}
+def u(x):
+    """Fonction échelon."""
+    if x < 0:
+        return 0
+    else:
+        return 1
+\end{minted}
+\caption{Implémentation de la fonction échelon}
+\label{lst:echelon}
+\end{listing}
+
+\begin{alertbox}{Attention}
+    Assurez-vous d'avoir Python 3.8+ installé.
+\end{alertbox}
+
+\section{Algorithme}
+
+La méthodologie suit le processus itératif décrit ci-après.
